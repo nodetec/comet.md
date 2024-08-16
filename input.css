@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "FuturaLocal";
+  src: url("./fonts/Futura/Futura-Medium-01.ttf") format("truetype");
+  font-style: normal;
+  weight: 500;
+}
+
+@font-face {
+  font-family: "FuturaLocalBold";
+  src: url("./fonts/Futura/Futura-Bold-03.ttf") format("truetype");
+  font-style: bold;
+  weight: 700;
+}
+
+@font-face {
+  font-family: "FuturaLocal";
+  src: url("./fonts/Futura/Futura-MediumItalic-02.ttf") format("truetype");
+  font-style: italic;
+  weight: 500;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("./fonts/Orbitron/Orbitron-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("./fonts/Figtree/Figtree-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("./fonts/Figtree/Figtree-Italic-VariableFont_wght.ttf") format("truetype");
+  font-style: italic;
+}

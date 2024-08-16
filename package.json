@@ -1,0 +1,16 @@
+{
+  "name": "relaywizard.com",
+  "version": "0.0.1",
+  "description": "Website for relay wizard",
+  "scripts": {
+    "dev": "live-server .",
+    "build": "tailwindcss -i ./input.css -o ./output.css",
+    "watch": "tailwindcss -i ./input.css -o ./output.css --watch"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwindcss": "^3.4.4"
+  }
+}

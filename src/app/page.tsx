@@ -3,7 +3,7 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 
 export default function Example() {
   return (
-    <div className="relative isolate h-full bg-neutral-900">
+    <div className="relative isolate h-full overflow-x-hidden bg-neutral-900">
       <svg
         aria-hidden="true"
         className="absolute inset-0 -z-10 size-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"

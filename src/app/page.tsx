@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 
-export default function Example() {
+export default function HomePage() {
   return (
     <div className="relative isolate h-full overflow-x-hidden bg-neutral-900">
       <svg

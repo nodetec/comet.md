@@ -66,7 +66,7 @@ export default function Example() {
                 What&apos;s new
               </span>
               <span className="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300">
-                <span>Just shipped v0.3.0-alpha</span>
+                <span>Just shipped v0.4.0-alpha</span>
                 <ChevronRightIcon
                   aria-hidden="true"
                   className="size-5 text-gray-500"
@@ -87,7 +87,7 @@ export default function Example() {
             <h2 className="text-2xl font-semibold text-white">Install</h2>
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
               <a
-                href="https://github.com/nodetec/comet/releases/download/v0.3.0-alpha/Comet-Alpha.dmg"
+                href="https://github.com/nodetec/comet/releases/download/v0.4.0-alpha/Comet-Alpha.dmg"
                 className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >
                 macOS ARM

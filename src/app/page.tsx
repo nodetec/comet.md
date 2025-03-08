@@ -87,22 +87,22 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold text-white">Install</h2>
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
               <a
-                href="https://github.com/nodetec/comet/releases/download/v0.5.0-alpha/Comet-Alpha.dmg"
+                href="https://github.com/nodetec/comet/releases/download/v0.5.0-alpha/Comet-v0.5.0-alpha-Darwin-arm64.dmg"
                 className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >
                 macOS ARM
+              </a>
+              <a
+                href="https://github.com/nodetec/comet/releases/download/v0.5.0-alpha/Comet-v0.5.0-alpha-x86_64.AppImage"
+                className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+              >
+                Linux AppImage
               </a>
               {/* <a
                 href="#"
                 className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >
                 macOS Intel
-              </a>
-              <a
-                href="#"
-                className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
-                Linux
               </a>
               <a
                 href="#"

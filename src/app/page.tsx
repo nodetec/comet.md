@@ -58,7 +58,7 @@ export default async function HomePage() {
           className="aspect-1108/632 w-[69.25rem] bg-linear-to-r from-[#60caf3] to-[#4a42e1] opacity-20"
         />
       </div>
-      <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+      <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
           <div className="flex items-center gap-1">
             <img

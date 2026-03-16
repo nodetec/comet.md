@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { getLatestRelease, findAsset } from "~/lib/github";
 
@@ -61,12 +61,10 @@ export default async function HomePage() {
       <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-24">
         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
           <div className="flex items-center gap-3">
-            <Image
+            <img
               alt="Comet logo"
               src="/comet-logo.svg"
-              width={44}
-              height={44}
-              className="h-11 w-auto rounded-md"
+              className="h-11 rounded-md"
             />
             <span className="text-2xl font-semibold text-white">
               Comet
@@ -134,13 +132,12 @@ export default async function HomePage() {
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:mt-0 lg:mr-0 lg:ml-10 lg:max-w-none lg:flex-none xl:ml-32">
           <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-            <Image
+            <img
               alt="App screenshot"
               src="/demo.png"
               width={3040}
               height={1882}
               className="w-[76rem]"
-              priority
             />
           </div>
         </div>

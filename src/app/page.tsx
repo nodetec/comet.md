@@ -1,7 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import { getLatestRelease, findAsset } from "~/lib/github";
 
-export default function HomePage() {
+const DOWNLOAD_BUTTONS = [
+  { label: "macOS ARM", pattern: "aarch64.dmg" },
+  { label: "macOS Intel", pattern: "x64.dmg" },
+  { label: "Linux AppImage", pattern: ".appimage" },
+  { label: "Linux .deb", pattern: ".deb" },
+  { label: "Linux .rpm", pattern: ".rpm" },
+] as const;
+
+export default async function HomePage() {
+  const release = await getLatestRelease();
+  const tag = release?.tag ?? "latest";
+  const fallbackBase = `https://github.com/nodetec/comet/releases/latest`;
+
   return (
     <div className="relative isolate h-full overflow-x-hidden bg-neutral-900">
       <svg
@@ -66,7 +79,7 @@ export default function HomePage() {
                 What&apos;s new
               </span>
               <span className="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300">
-                <span>Just shipped v0.9.0-alpha</span>
+                <span>Latest: {tag}</span>
                 <ChevronRightIcon
                   aria-hidden="true"
                   className="size-5 text-gray-500"
@@ -86,42 +99,23 @@ export default function HomePage() {
           <div className="mt-10">
             <h2 className="text-2xl font-semibold text-white">Install</h2>
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <a
-                href="https://github.com/nodetec/comet/releases/download/v0.9.0-alpha/Comet-v0.9.0-alpha-Darwin-arm64.dmg"
-                className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
-                macOS ARM
-              </a>
-              <a
-                href="https://github.com/nodetec/comet/releases/download/v0.9.0-alpha/Comet-v0.9.0-alpha-amd64.AppImage"
-                className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
-                Linux AppImage
-              </a>
-              <a
-                href="https://github.com/nodetec/comet/releases/download/v0.9.0-alpha/Comet-v0.9.0-alpha-amd64.deb"
-                className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
-                Linux .deb
-              </a>
-              <a
-                href="https://github.com/nodetec/comet/releases/download/v0.9.0-alpha/Comet-v0.9.0-alpha-amd64.rpm"
-                className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
-                Linux .rpm
-              </a>
-              {/* <a
-                href="#"
-                className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
-                macOS Intel
-              </a>
-              <a
-                href="#"
-                className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-              >
-                Windows
-              </a> */}
+              {DOWNLOAD_BUTTONS.map(({ label, pattern }) => {
+                const asset = release
+                  ? findAsset(release.assets, pattern)
+                  : undefined;
+                const href = asset?.url ?? fallbackBase;
+
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    download
+                    className="text-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                  >
+                    {label}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -101,7 +101,7 @@ export default async function HomePage() {
             </a>
           </div>
           <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-white sm:text-7xl">
-            Capture locally transmit globally.
+            Capture locally, transmit globally.
           </h1>
           <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
             Comet is a desktop note-taking app that combines private local
